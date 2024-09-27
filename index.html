@@ -1,92 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tu Empresa</title>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-8a4 4 0 014-4h10a4 4 0 014 4v8M7 10V7a5 5 0 015-5 5 5 0 015 5v3"/>
-    </svg>
-    <span class="logo">Tu Empresa</span>
-    <nav class="nav">
-      <a href="#about">Acerca de</a>
-      <a href="#services">Servicios</a>
-      <a href="#contact">Contacto</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu Empresa</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#about">Acerca de</a>
+        <a href="#services">Servicios</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Sección de Bienvenida -->
-    <section class="welcome">
-      <div class="container">
-        <div class="content-center">
-          <h1>Bienvenido a Tu Empresa</h1>
-          <p>Breve descripción de lo que hace tu empresa y el valor que ofrece a tus clientes.</p>
-          <button class="button">Conoce más</button>
+    <main>
+      <!-- Sección de Bienvenida con video de fondo -->
+      <section class="welcome">
+        <video autoplay muted loop class="background-video">
+          <source src="./static/video/bg_background.mp4" type="video/mp4" />
+          Tu navegador no soporta el formato de video.
+        </video>
+        <div class="container">
+          <div class="content-center">
+            <h1>LaunchOBA</h1>
+            <p>
+              Empresa experta Especializados en formación y asesoría tecnológica para el sector
+              TIC.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Acerca de Nosotros -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2>Acerca de Nosotros</h2>
-        <p>Información detallada sobre la historia de tu empresa, su misión y visión. Explica lo que hace única a tu empresa en el mercado.</p>
-      </div>
-    </section>
+      <!-- Acerca de Nosotros -->
+      <section id="about" class="about">
+        <div class="container">
+          <div>
+            <h2>Acerca de Nosotros</h2>
+            <p>
+              Tu Empresa se enfoca en proporcionar formación especializada en el
+              área de TIC, con cursos centrados en el análisis de datos,
+              inteligencia artificial y tecnología de vanguardia. Además,
+              ofrecemos servicios de consultoría TIC para optimizar la
+              infraestructura tecnológica de empresas, ayudándolas a mejorar su
+              flujo de trabajo y eficiencia operativa. También desarrollamos
+              productos diseñados para agilizar el flujo de datos y facilitar el
+              análisis, permitiendo a nuestros clientes tomar decisiones
+              informadas.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Servicios -->
-    <section id="services" class="services">
-      <div class="container">
-        <h2>Nuestros Servicios</h2>
-        <div class="services-grid" x-data="{ services: [1, 2, 3] }">
-          <template x-for="service in services" :key="service">
-            <div class="service-item">
-              <div class="icon-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-8a4 4 0 014-4h10a4 4 0 014 4v8M7 10V7a5 5 0 015-5 5 5 0 015 5v3"/>
-                </svg>
+      <!-- Servicios -->
+      <section id="services" class="services">
+        <div class="container">
+          <h2>Nuestros Servicios</h2>
+          <div class="services-grid" x-data="{ services: [1, 2, 3] }">
+            <template x-for="service in services" :key="service">
+              <div class="service-item">
+                <div class="icon-circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon-lg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 21v-8a4 4 0 014-4h10a4 4 0 014 4v8M7 10V7a5 5 0 015-5 5 5 0 015 5v3"
+                    />
+                  </svg>
+                </div>
+                <h3>Servicio <span x-text="service"></span></h3>
+                <p>Descripción breve del servicio o producto ofrecido.</p>
               </div>
-              <h3>Servicio <span x-text="service"></span></h3>
-              <p>Descripción breve del servicio o producto ofrecido.</p>
-            </div>
-          </template>
+            </template>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contacto -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contáctanos</h2>
-        <form @submit.prevent="submitForm()">
-          <input type="text" placeholder="Nombre" required>
-          <input type="email" placeholder="Email" required>
-          <input type="text" placeholder="Asunto" required>
-          <textarea placeholder="Mensaje" required></textarea>
-          <button type="submit" class="button">Enviar Mensaje</button>
-        </form>
-      </div>
-    </section>
-  </main>
+      <!-- Contacto -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2>Contáctanos</h2>
+          <form @submit.prevent="submitForm()">
+            <input type="text" placeholder="Nombre" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Asunto" required />
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit" class="button">Enviar Mensaje</button>
+          </form>
+        </div>
+      </section>
+    </main>
 
-  <footer class="footer">
-    <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
-    <nav class="footer-nav">
-      <a href="#">Términos de Servicio</a>
-      <a href="#">Política de Privacidad</a>
-    </nav>
-  </footer>
+    <footer class="footer">
+      <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="#">Términos de Servicio</a>
+        <a href="#">Política de Privacidad</a>
+      </nav>
+    </footer>
 
-  <script>
-    function submitForm() {
-      alert('Mensaje enviado correctamente');
-    }
-  </script>
-</body>
+    <script>
+      function submitForm() {
+        alert("Mensaje enviado correctamente");
+      }
+    </script>
+  </body>
 </html>
