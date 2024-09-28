@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tu Empresa</title>
+    <title>LaunchOBA</title>
+    <link rel="icon" href="./static/images/logo.png" type="image/x-icon" />
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -57,36 +59,52 @@
         </div>
       </section>
 
-      <!-- Servicios -->
-      <section id="services" class="services">
-        <div class="container">
-          <h2>Nuestros Servicios</h2>
-          <div class="services-grid" x-data="{ services: [1, 2, 3] }">
-            <template x-for="service in services" :key="service">
-              <div class="service-item">
-                <div class="icon-circle">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon-lg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3 21v-8a4 4 0 014-4h10a4 4 0 014 4v8M7 10V7a5 5 0 015-5 5 5 0 015 5v3"
-                    />
-                  </svg>
-                </div>
-                <h3>Servicio <span x-text="service"></span></h3>
-                <p>Descripción breve del servicio o producto ofrecido.</p>
-              </div>
-            </template>
-          </div>
+<!-- Servicios -->
+<section id="services" class="services">
+  <div class="container">
+    <h2>Nuestros Servicios</h2>
+    <div class="services-grid">
+      <!-- Servicio 1: Cursos y Formación TIC -->
+      <div class="service-item">
+        <div class="icon-circle">
+          <!-- Imagen personalizada para el servicio de formación -->
+          <img src="./static/images/study.png" alt="Cursos y Formación" class="icon-img" />
         </div>
-      </section>
+        <h3>Cursos y Formación TIC</h3>
+        <p>
+          Ofrecemos cursos especializados en tecnologías emergentes como Data
+          Science y Big Data, diseñados para profesionales del sector TIC.
+        </p>
+      </div>
+
+      <!-- Servicio 2: Asesoría Tecnológica -->
+      <div class="service-item">
+        <div class="icon-circle">
+          <!-- Imagen personalizada para el servicio de asesoría -->
+          <img src="./static/images/skill.png" alt="Asesoría Tecnológica" class="icon-img" />
+        </div>
+        <h3>Asesoría Tecnológica</h3>
+        <p>
+          Brindamos servicios de consultoría para optimizar el uso de tecnologías TIC en tu empresa, mejorando la eficiencia y el flujo de datos.
+        </p>
+      </div>
+
+      <!-- Servicio 3: Soluciones de Análisis de Datos -->
+      <div class="service-item">
+        <div class="icon-circle">
+          <!-- Imagen personalizada para el servicio de análisis de datos -->
+          <img src="./static/images/data.png" alt="Análisis de Datos" class="icon-img" />
+        </div>
+        <h3>Soluciones de Análisis de Datos</h3>
+        <p>
+          Desarrollamos herramientas personalizadas para agilizar el análisis y procesamiento de grandes volúmenes de datos en tiempo real.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       <!-- Contacto -->
       <section id="contact" class="contact">
@@ -104,7 +122,7 @@
     </main>
 
     <footer class="footer">
-      <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
+      <p>© 2024 LaunchOBA. Todos los derechos reservados.</p>
       <nav class="footer-nav">
         <a href="#">Términos de Servicio</a>
         <a href="#">Política de Privacidad</a>
